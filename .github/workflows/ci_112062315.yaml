@@ -30,7 +30,7 @@ jobs:
             - name: Run tests
               run: |
                   mkdir -p reports
-                  npm test -- --reporter=default --reporter=junit --outputFile.junit=reports/vitest-junit.xml
+                  npm test -- --run --reporter=default --reporter=junit --outputFile=reports/vitest-junit.xml
 
             - name: Upload test report artifact
               if: always()
