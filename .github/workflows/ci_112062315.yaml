@@ -26,10 +26,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: TypeScript Typecheck
+      - name: TypeScript typecheck
         run: npm run typecheck
 
-      - name: Prettier Check
+      - name: Prettier check
         run: npm run format:check
 
       - name: Run tests
@@ -37,7 +37,7 @@ jobs:
           mkdir -p reports
           npm test -- --reporter=default --reporter=junit --outputFile.junit=reports/vitest-junit.xml
 
-      - name: Surface Test Results
+      - name: Surface test results
         if: always()
         uses: EnricoMi/publish-unit-test-result-action@v2
         with:
